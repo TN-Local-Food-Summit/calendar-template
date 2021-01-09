@@ -1,0 +1,16 @@
+.inactiveDay{
+  background-color: rgb(187, 187, 187);
+  width: 100px;
+  height: 100px;
+  position: relative; /* If you want text inside of it */
+}
+
+.activeDay{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  background-color: rgb(244, 244, 244);
+  width: 100px;
+  height: 100px;
+  position: relative; /* If you want text inside of it */
+}
