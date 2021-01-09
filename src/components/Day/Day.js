@@ -13,6 +13,7 @@ class Day extends Component{
   }
 
   render() {
+    
     if(!this.state.render)
       return <td className="inactiveDay" key={this.props.id}></td>;
 
@@ -21,7 +22,7 @@ class Day extends Component{
       events.push(<p>{i}</p>)
     });
     return (
-      <td className="activeDay" key={this.props.id}>
+      <td key={this.props.id} className="activeDay">
         <p>{this.state.date.getDate()}</p>
         {events}
       </td>

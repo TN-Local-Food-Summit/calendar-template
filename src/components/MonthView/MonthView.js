@@ -39,6 +39,7 @@ class MonthView extends Component{
 
         row.push(
           <Day
+            key = {i*7+j}
             id = {i*7+j}
             render = {i*7+j >= firstDayOffset && i*7+j < lastDayOffset}
             date = {newDayDate}
@@ -47,7 +48,7 @@ class MonthView extends Component{
         )
       }
       tableBody.push(
-        <tr>
+        <tr key={"tr"+i}>
           {row}
         </tr>
       )
@@ -56,8 +57,8 @@ class MonthView extends Component{
     
     return (
       <table>
-        <thead>
-          <tr>
+        <thead key="thead">
+          <tr key="header">
             <th key="Sunday">Sunday</th>
             <th key="Monday">Monday</th> 
             <th key="Tuesday">Tuesday</th>
@@ -67,7 +68,7 @@ class MonthView extends Component{
             <th key="Saturday">Saturday</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody key={this.props.month}>
           {tableBody}
         </tbody>
         
