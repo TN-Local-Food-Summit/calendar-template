@@ -13,7 +13,6 @@ class Calendar extends Component{
     this.state = {
       monthView: true,
       selectedDate: today,
-      currentMonth: today.toLocaleString('default', { month: 'long' }),
       firstDay: threeDaysAgo, // This is used in week view and represents the first day shown, may be a dif month
       events: this.props.events, // This may be loaded in the Calendar class in the future   
     }
@@ -56,7 +55,7 @@ class Calendar extends Component{
       <div>
         <button onClick={this.decreaseMonth}>Prev Month</button>
         <button onClick={this.increaseMonth}>Next Month</button>
-        <p></p>
+        <h1>{this.state.selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h1>
         {calendarView}
       </div>
     )
