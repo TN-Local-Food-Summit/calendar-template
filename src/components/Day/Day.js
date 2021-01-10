@@ -18,8 +18,8 @@ class Day extends Component{
       return <td className="inactiveDay" key={this.props.id}></td>;
 
     let events = [];
-    this.state.events.forEach((element,i) => {
-      events.push(<p>{i}</p>)
+    this.state.events.forEach((event,i) => {
+      events.push(<p key={this.props.id+"event"+i} className="event">{event.eventName}</p>)
     });
     return (
       <td key={this.props.id} className="activeDay">

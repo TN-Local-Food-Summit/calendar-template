@@ -4,10 +4,7 @@ import Day from '../Day/Day.js';
 class MonthView extends Component{
   constructor(props){
     super(props);
-
-    this.state = {
-      events: this.props.events,
-    }
+    this.getEventsForDay = this.getEventsForDay.bind(this);
   }
 
 /*
@@ -20,6 +17,12 @@ class MonthView extends Component{
     "links": not gonna start off with this one tbh
   }
 */
+  getEventsForDay(date){
+    
+    return this.props.events.filter(event => date.getDate() === event.eventDate.getDate() 
+                                          && date.getMonth() === event.eventDate.getMonth() 
+                                          && date.getFullYear() === event.eventDate.getFullYear());
+  }
 
 
   render() {
@@ -43,7 +46,7 @@ class MonthView extends Component{
             id = {i*7+j}
             render = {i*7+j >= firstDayOffset && i*7+j < lastDayOffset}
             date = {newDayDate}
-            events = {[]}
+            events = {this.getEventsForDay(newDayDate)}
           />
         )
       }

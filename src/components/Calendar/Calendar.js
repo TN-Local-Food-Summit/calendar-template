@@ -30,11 +30,27 @@ class Calendar extends Component{
     console.log(this.state.selectedDate);
   }
 
+/*
+{
+    "eventType": conference or workshop
+    "eventDate": date object JS
+    "attendees": array of user ids probably
+    "speakers": likely names but also may be ids? gonna start with just names for simplicity
+    "description": text
+    "links": not gonna start off with this one tbh
+  }
+*/
 
   render() {
     let calendarView;
     if(this.state.monthView){
-      calendarView =  <MonthView year={this.state.selectedDate.getFullYear()} month={this.state.selectedDate.getMonth()}/>;
+      const eventsOfMonth = this.state.events.filter(event => event["eventDate"].getMonth() === this.state.selectedDate.getMonth());
+
+      calendarView =  <MonthView 
+                        events={eventsOfMonth}
+                        year={this.state.selectedDate.getFullYear()} 
+                        month={this.state.selectedDate.getMonth()}
+                      />;
     }else{
       calendarView = <WeekView/>;
     }

@@ -21,3 +21,9 @@
   right: 10px; 
   text-align: right;
 }
+
+.event {
+  background-color: aqua;
+  border-radius: 5px;
+  margin: 2px 3px;
+}
