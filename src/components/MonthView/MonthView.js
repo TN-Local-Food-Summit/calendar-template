@@ -7,18 +7,8 @@ class MonthView extends Component{
     this.getEventsForDay = this.getEventsForDay.bind(this);
   }
 
-/*
-{
-    "eventType": conference or workshop
-    "eventDate": year month day hours minutes
-    "attendees": array of user ids probably
-    "speakers": likely names but also may be ids? gonna start with just names for simplicity
-    "description": text
-    "links": not gonna start off with this one tbh
-  }
-*/
+
   getEventsForDay(date){
-    
     return this.props.events.filter(event => date.getDate() === event.eventDate.getDate() 
                                           && date.getMonth() === event.eventDate.getMonth() 
                                           && date.getFullYear() === event.eventDate.getFullYear());

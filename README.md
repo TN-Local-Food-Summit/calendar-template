@@ -18,6 +18,7 @@ Should have the ability to change what’s shown on calendar, change links, edit
 
 {
   "eventType": conference or workshop
+  "eventName": just the name
   "eventDate": year month day hours minutes
   "attendees": array of user ids probably
   "speakers": likely names but also may be ids? gonna start with just names for simplicity

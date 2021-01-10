@@ -19,6 +19,7 @@ class Calendar extends Component{
     this.changeMonth = this.changeMonth.bind(this);
   }
 
+  // This function is used to change the selected month
   changeMonth(amount) {
     let tmp = this.state.selectedDate;
     tmp.setDate(1);
@@ -27,19 +28,7 @@ class Calendar extends Component{
       selectedDate: tmp,
       firstDay: tmp,
     })
-    console.log(this.state.selectedDate);
   }
-
-/*
-{
-    "eventType": conference or workshop
-    "eventDate": date object JS
-    "attendees": array of user ids probably
-    "speakers": likely names but also may be ids? gonna start with just names for simplicity
-    "description": text
-    "links": not gonna start off with this one tbh
-  }
-*/
 
   render() {
     let calendarView;
