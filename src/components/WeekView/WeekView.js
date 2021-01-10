@@ -10,7 +10,7 @@ class WeekView extends Component{
   render() {
     return (
       <div>
-        <p>Hello World, week</p>
+        <p>Hello World, week. Honestly I do not feel like working on this view for a while cuz it will be a pain for all the positioning</p>
       </div>
     )
   }

@@ -20,6 +20,7 @@ class Calendar extends Component{
     this.setSelectedDate = this.setSelectedDate.bind(this);
     this.closeEventPopup = this.closeEventPopup.bind(this);
     this.selectEvent = this.selectEvent.bind(this);
+    this.switchCalendarView = this.switchCalendarView.bind(this);
   }
 
   setSelectedDate(date) {
@@ -37,6 +38,12 @@ class Calendar extends Component{
   selectEvent(eventId) {
     this.setState({
       selectedEvent: eventId,
+    })
+  }
+
+  switchCalendarView() {
+    this.setState({
+      monthView: !this.state.monthView,
     })
   }
 
@@ -70,14 +77,11 @@ class Calendar extends Component{
                     event = {event}
                     closeEventPopup = {this.closeEventPopup}
                   />
-    }else{
-
     }
-
 
     return (
       <div>
-        
+        <button onClick={this.switchCalendarView}>Switch Calendar View</button>
         {calendarView}
         {eventView}
       </div>
