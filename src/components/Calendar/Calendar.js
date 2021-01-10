@@ -16,31 +16,20 @@ class Calendar extends Component{
       firstDay: threeDaysAgo, // This is used in week view and represents the first day shown, may be a dif month
       events: this.props.events, // This may be loaded in the Calendar class in the future   
     }
-    this.increaseMonth = this.increaseMonth.bind(this);
-    this.decreaseMonth = this.decreaseMonth.bind(this);
-    console.log(this.state.currentMonth);
-    console.log(this.state.firstDay);
+    this.changeMonth = this.changeMonth.bind(this);
   }
 
-  increaseMonth() {
+  changeMonth(amount) {
     let tmp = this.state.selectedDate;
     tmp.setDate(1);
-    tmp.setMonth(tmp.getMonth() + 1);
+    tmp.setMonth(tmp.getMonth() + amount);
     this.setState({
       selectedDate: tmp,
+      firstDay: tmp,
     })
     console.log(this.state.selectedDate);
   }
 
-  decreaseMonth() {
-    let tmp = this.state.selectedDate;
-    tmp.setDate(1);
-    tmp.setMonth(tmp.getMonth() - 1);
-    this.setState({
-      selectedDate: tmp,
-    })
-    console.log(this.state.selectedDate);
-  }
 
   render() {
     let calendarView;
@@ -53,8 +42,8 @@ class Calendar extends Component{
 
     return (
       <div>
-        <button onClick={this.decreaseMonth}>Prev Month</button>
-        <button onClick={this.increaseMonth}>Next Month</button>
+        <button onClick={() => this.changeMonth(-1)}>Prev Month</button>
+        <button onClick={() => this.changeMonth(1)}>Next Month</button>
         <h1>{this.state.selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h1>
         {calendarView}
       </div>
