@@ -10,6 +10,7 @@ function App() {
         events = {
           [
             {
+              "eventId": "3d3f4602-538c-11eb-ae93-0242ac130002",
               "eventType": "conference",
               "eventName": "test 1",
               "eventDate": today,
@@ -19,12 +20,13 @@ function App() {
               "links": []
             },
             {
+              "eventId": "3d3f485a-538c-11eb-ae93-0242ac130002",
               "eventType": "conference",
               "eventName": "test 2",
               "eventDate": today,
               "attendees": [],
-              "speakers": ["John Doe"],
-              "description": "The first test event",
+              "speakers": ["Jane Doe"],
+              "description": "The second test event",
               "links": []
             }
           ]

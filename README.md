@@ -17,6 +17,7 @@ Should have the ability to change what’s shown on calendar, change links, edit
 
 
 {
+  "eventId": uuidv4?
   "eventType": conference or workshop
   "eventName": just the name
   "eventDate": year month day hours minutes

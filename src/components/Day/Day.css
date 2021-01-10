@@ -27,3 +27,7 @@
   border-radius: 5px;
   margin: 2px 3px;
 }
+
+.event:hover {
+  background-color: rgb(0, 233, 233);
+}

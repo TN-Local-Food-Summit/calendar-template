@@ -36,6 +36,7 @@ class MonthView extends Component{
             render = {i*7+j >= firstDayOffset && i*7+j < lastDayOffset}
             date = {newDayDate}
             events = {this.getEventsForDay(newDayDate)}
+            selectEvent = {this.props.selectEvent}
           />
         )
       }
