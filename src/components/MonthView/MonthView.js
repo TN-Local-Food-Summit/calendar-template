@@ -27,8 +27,7 @@ class MonthView extends Component{
     for(let i = 0; i<6; ++i){
       let row = [];
       for(let j = 0; j<7; ++j){
-        let newDayDate = new Date();
-        newDayDate.setDate(firstDayOfMonth.getDate()-firstDayOffset + i * 7 + j);
+        let newDayDate = new Date(this.props.year,this.props.month,firstDayOfMonth.getDate()-firstDayOffset + i * 7 + j);
 
         row.push(
           <Day
